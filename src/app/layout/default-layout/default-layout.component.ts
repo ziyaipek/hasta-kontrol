@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { NgScrollbar } from 'ngx-scrollbar';
-
-import { IconDirective } from '@coreui/icons-angular';
+import { cilHospital } from '@coreui/icons';
+import { IconDirective, IconComponent } from '@coreui/icons-angular';
 import {
   ContainerComponent,
   ShadowOnScrollDirective,
@@ -45,11 +45,13 @@ function isOverflown(element: HTMLElement) {
     ShadowOnScrollDirective,
     ContainerComponent,
     RouterOutlet,
-    DefaultFooterComponent
+    DefaultFooterComponent,
+    IconComponent
   ]
 })
 export class DefaultLayoutComponent {
   public navItems = navItems;
+  icons = { cilHospital };
 
   onScrollbarUpdate($event: any) {
     // if ($event.verticalUsed) {
