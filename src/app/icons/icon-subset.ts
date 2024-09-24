@@ -96,6 +96,7 @@ import {
   cilUserUnfollow,
   cilQrCode, // Added QR code icon
   cilMedicalCross, // Added Medical Cross icon
+  cilHealing,
 } from '@coreui/icons';
 
 import { signet } from './signet';
@@ -105,6 +106,7 @@ export const iconSubset = {
   cibCcAmex,
   cilQrCode, // QR code icon
   cilMedicalCross, // Medical Cross icon
+  cilHealing,
   cibCcApplePay,
   cibCcMastercard,
   cibCcPaypal,
@@ -208,6 +210,7 @@ export enum IconSubset {
   cibCcApplePay = 'cibCcApplePay',
   cilQrCode = 'cilQrCode', // QR code icon enum
   cilMedicalCross = 'cilMedicalCross', // Medical Cross icon enum
+  cilHealing = 'cilHealing',
   cibCcMastercard = 'cibCcMastercard',
   cibCcPaypal = 'cibCcPaypal',
   cibCcStripe = 'cibCcStripe',

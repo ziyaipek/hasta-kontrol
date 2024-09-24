@@ -18,12 +18,12 @@ export const navItems: INavData[] = [
   {
     name: 'Doctors',
     url: '/admin/doctors',
-    iconComponent: { name: 'cil-user' }
+    iconComponent: { name: 'cil-people' }
   },
   {
     name: 'Patients',
     url: '/admin/patients',
-    iconComponent: { name: 'cil-user' }
+    iconComponent: { name: 'cil-people' }
   },
   {
     name: 'Medicines',
@@ -33,7 +33,7 @@ export const navItems: INavData[] = [
   {
     name: 'Diseases',
     url: '/admin/diseases',
-    iconComponent: { name: 'cil-medical-cross' }
+    iconComponent: { name: 'cil-healing' }
   },
   {
     name: 'User Permissions',
@@ -48,7 +48,7 @@ export const navItems: INavData[] = [
   {
     name: 'My Patients',
     url: '/doctor/my-patients',
-    iconComponent: { name: 'cil-user' }
+    iconComponent: { name: 'cil-people' }
   },
   {
     name: 'Medicines',
@@ -58,7 +58,7 @@ export const navItems: INavData[] = [
   {
     name: 'Diseases',
     url: '/doctor/diseases',
-    iconComponent: { name: 'cil-medical-cross' }
+    iconComponent: { name: 'cil-healing' }
   },
   {
     name: 'Health Reports',
