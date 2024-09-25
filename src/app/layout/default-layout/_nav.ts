@@ -5,7 +5,7 @@ export const navItems: INavData[] = [
   {
     name: 'Dashboard',
     url: '/dashboard',
-    iconComponent: { name: 'cil-speedometer' },
+    iconComponent: { name: 'cil-view-module' },
     badge: {
       color: 'info',
       text: 'NEW'
@@ -38,7 +38,12 @@ export const navItems: INavData[] = [
   {
     name: 'User Permissions',
     url: '/admin/permissions',
-    iconComponent: { name: 'cil-lock-locked' }
+    iconComponent: { name: 'cil-https' }
+  },
+  {
+    name: 'Settings',
+    url: '/admin/settings',
+    iconComponent: { name: 'cil-settings' }
   },
   {
     title: true,
