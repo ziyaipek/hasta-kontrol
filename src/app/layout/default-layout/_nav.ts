@@ -37,7 +37,7 @@ export const navItems: INavData[] = [
   },
   {
     name: 'User Permissions',
-    url: '/admin/permissions',
+    url: '/admin/user-permissions',
     iconComponent: { name: 'cil-https' }
   },
   {
@@ -82,12 +82,12 @@ export const navItems: INavData[] = [
   // Patient menu items
   {
     name: 'My Health Information',
-    url: '/patient/my-health-info',
+    url: '/patient/my-health-information',
     iconComponent: { name: 'cil-user' }
   },
   {
     name: 'Generate QR Code',
-    url: '/patient/qr-code',
+    url: '/patient/generate-qr-code',
     iconComponent: { name: 'cil-qr-code' }
   },
   {

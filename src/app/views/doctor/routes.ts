@@ -1,11 +1,8 @@
 import { Routes } from '@angular/router';
 
-import { DoctorComponent } from './doctor.component';
-
 export const routes: Routes = [
   {
     path: '',
-    component: DoctorComponent,
     data: {
       title: 'Doctor'
     },
@@ -22,6 +19,34 @@ export const routes: Routes = [
           title: 'Medicines'
         }
       },
+      {
+        path: 'diseases',
+        loadComponent: () => import('./diseases/diseases.component').then(m => m.DiseasesComponent),
+        data: {
+          title: 'Diseases'
+        }
+      },
+      {
+        path: 'health-reports',
+        loadComponent: () => import('./health-reports/health-reports.component').then(m => m.HealthReportsComponent),
+        data: {
+          title: 'Health-Reports'
+        }
+      },
+      {
+        path: 'settings',
+        loadComponent: () => import('./settings/settings.component').then(m => m.SettingsComponent),
+        data: {
+          title: 'Settings'
+        }
+      },
+      {
+        path: 'my-patients',
+        loadComponent: () => import('./my-patients/my-patients.component').then(m => m.MyPatientsComponent),
+        data: {
+          title: 'My-Patients'
+        }
+      }
     ]
   }
 ];
