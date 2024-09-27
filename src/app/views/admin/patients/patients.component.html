@@ -1,1 +1,29 @@
-<p>patients works!</p>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Hasta Adı</th>
+        <th scope="col">Hasta Soyadı</th>
+        <th scope="col">Telefon Numarası</th>
+        <th scope="col">İşlemler</th> <!-- İşlemler sütunu -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let patient of patients; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ patient.firstName }}</td>
+        <td>{{ patient.lastName }}</td>
+        <td>{{ patient.phone }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="editPatient(patient.id)">Düzenle</button>
+          <button class="btn btn-danger" (click)="deletePatient(patient.id)">Sil</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <!-- Tablonun altına "Yeni Hasta Ekle" butonu -->
+  <div class="mt-3">
+    <button class="btn btn-success" (click)="addNewPatient()">Yeni Hasta Ekle</button>
+  </div>
+  

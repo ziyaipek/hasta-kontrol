@@ -9,4 +9,22 @@ import { Component } from '@angular/core';
 })
 export class DoctorsComponent {
 
+
+  editDoctor(id: number) {
+
+    console.log('Doktor düzenleniyor: ', id);
+  }
+
+  deleteDoctor(id: number) {
+
+    console.log('Doktor siliniyor: ', id);
+
+  }
+
+  addNewDoctor() {
+
+    console.log('Yeni doktor ekleniyor');
+  }
 }
+
+
