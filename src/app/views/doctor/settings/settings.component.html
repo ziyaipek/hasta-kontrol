@@ -1,1 +1,47 @@
-<p>settings works!</p>
+<div class="container mt-5">
+    <!-- Update Contact Information -->
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Update Contact Information</h5>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter your new email address">
+        </div>
+        <div class="form-group mt-2">
+          <label for="phone">Phone Number</label>
+          <input type="tel" class="form-control" id="phone" placeholder="Enter your new phone number">
+        </div>
+        <button class="btn btn-primary mt-3" (click)="updateContactInfo()">Update Contact Info</button>
+      </div>
+    </div>
+  
+    <!-- Change Password -->
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Change Password</h5>
+        <div class="form-group">
+          <label for="oldPassword">Old Password</label>
+          <input type="password" class="form-control" id="oldPassword" placeholder="Enter your old password">
+        </div>
+        <div class="form-group mt-2">
+          <label for="newPassword">New Password</label>
+          <input type="password" class="form-control" id="newPassword" placeholder="Enter your new password">
+        </div>
+        <div class="form-group mt-2">
+          <label for="confirmPassword">Confirm New Password</label>
+          <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your new password">
+        </div>
+        <button class="btn btn-primary mt-3" (click)="changePassword()">Update Password</button>
+      </div>
+    </div>
+  
+    <!-- Delete Account -->
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title text-danger">Delete Account</h5>
+        <p class="text-danger">Are you sure you want to delete your account? This action cannot be undone.</p>
+        <button class="btn btn-danger" (click)="deleteAccount()">Delete Account</button>
+      </div>
+    </div>
+  </div>
+  
