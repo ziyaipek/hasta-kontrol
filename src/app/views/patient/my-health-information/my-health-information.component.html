@@ -1,1 +1,59 @@
-<p>my-health-information works!</p>
+<div class="container mt-5">
+    <c-row>
+      <c-col [lg]="12">
+        <c-card class="custom-card mb-3">
+          <c-card-header class="custom-card-header">
+            <h4 class="text-center">Patient Health Information</h4>
+          </c-card-header>
+          <c-card-body>
+            <c-row>
+              <!-- Patient Info -->
+              <c-col [lg]="6">
+                <h5>Personal Information</h5>
+                <p><strong>Name:</strong> {{ patient.firstName }} {{ patient.lastName }}</p>
+                <p><strong>Phone:</strong> {{ patient.phone }}</p>
+              </c-col>
+  
+              <!-- Emergency Contact -->
+              <c-col [lg]="6">
+                <h5>Emergency Contact</h5>
+                <p><strong>Name:</strong> {{ patient.emergencyContact.name }}</p>
+                <p><strong>Relationship:</strong> {{ patient.emergencyContact.relationship }}</p>
+                <p><strong>Phone:</strong> {{ patient.emergencyContact.phone }}</p>
+              </c-col>
+            </c-row>
+  
+            <hr>
+  
+            <!-- Illnesses and Medications -->
+            <c-row>
+              <c-col [lg]="6">
+                <h5>Illnesses</h5>
+                <ul>
+                  <li *ngFor="let illness of patient.illnesses">{{ illness }}</li>
+                </ul>
+              </c-col>
+  
+              <c-col [lg]="6">
+                <h5>Medications</h5>
+                <ul>
+                  <li *ngFor="let medication of patient.medications">{{ medication }}</li>
+                </ul>
+              </c-col>
+            </c-row>
+  
+            <hr>
+  
+            <!-- Doctor's Note -->
+            <c-row>
+              <c-col [lg]="12">
+                <h5>Doctor's Note</h5>
+                <p>{{ patient.doctorNote }}</p>
+              </c-col>
+            </c-row>
+          </c-card-body>
+        </c-card>
+      </c-col>
+    </c-row>
+  </div>
+  

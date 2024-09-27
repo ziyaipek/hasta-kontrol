@@ -62,11 +62,6 @@ export const navItems: INavData[] = [
     iconComponent: { name: 'cil-healing' }
   },
   {
-    name: 'Health Reports',
-    url: '/doctor/health-reports',
-    iconComponent: { name: 'cil-description' }
-  },
-  {
     name: 'Settings',
     url: '/doctor/settings',
     iconComponent: { name: 'cil-settings' }

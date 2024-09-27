@@ -1,1 +1,28 @@
-<p>diseases works!</p>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Disease Name</th>
+        <th scope="col">Symptoms</th>
+        <th scope="col">Actions</th> <!-- Actions column -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let disease of diseases; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ disease.name }}</td>
+        <td>{{ disease.symptoms }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="editDisease(disease.id)">Edit</button>
+          &nbsp;
+          <button class="btn btn-danger" (click)="deleteDisease(disease.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <!-- Add New Disease button below the table -->
+  <div class="mt-3">
+  <button class="btn btn-success" (click)="addNewDisease()">Add New Disease</button>
+  </div>
+  
