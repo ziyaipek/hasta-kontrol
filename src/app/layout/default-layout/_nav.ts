@@ -35,11 +35,7 @@ export const navItems: INavData[] = [
     url: '/admin/diseases',
     iconComponent: { name: 'cil-healing' }
   },
-  {
-    name: 'User Permissions',
-    url: '/admin/user-permissions',
-    iconComponent: { name: 'cil-https' }
-  },
+
   {
     name: 'Settings',
     url: '/admin/settings',

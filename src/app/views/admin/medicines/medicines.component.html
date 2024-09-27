@@ -1,27 +1,27 @@
 <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">İlaç Adı</th>
-        <th scope="col">Kullanım Dozu</th>
-        <th scope="col">İşlemler</th> <!-- İşlemler sütunu ekleniyor -->
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let medication of medications; let i = index">
-        <th scope="row">{{ i + 1 }}</th>
-        <td>{{ medication.name }}</td>
-        <td>{{ medication.dose }}</td>
-        <td>
-          <button class="btn btn-primary" (click)="editMedication(medication.id)">Düzenle</button>
-          <button class="btn btn-danger" (click)="deleteMedication(medication.id)">Sil</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <!-- Tablonun altına "Yeni İlaç Ekle" butonu -->
-  <div class="mt-3">
-    <button class="btn btn-success" (click)="addNewMedication()">Yeni İlaç Ekle</button>
-  </div>
-  
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Medication Name</th>
+      <th scope="col">Dosage</th>
+      <th scope="col">Actions</th> <!-- Actions column -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let medication of medications; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ medication.name }}</td>
+      <td>{{ medication.dose }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="editMedication(medication.id)">Edit</button>
+        &nbsp;
+        <button class="btn btn-danger" (click)="deleteMedication(medication.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Add New Medication button below the table -->
+<div class="mt-3">
+<button class="btn btn-success" (click)="addNewMedication()">Add New Medication</button>
+</div>

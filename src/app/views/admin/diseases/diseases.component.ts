@@ -15,6 +15,7 @@ export class DiseasesComponent {
   ];
 
   editDisease(id: number) {
+    
     console.log('Hastalık düzenleniyor: ', id);
   }
 
