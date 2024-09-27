@@ -50,6 +50,12 @@ export class DefaultHeaderComponent extends HeaderComponent {
     return this.colorModes.find(mode => mode.name === currentMode)?.icon ?? 'cilSun';
   });
 
+  readonly avatarSrc = computed(() => {
+    const currentMode = this.colorMode();
+    return currentMode === 'dark' ? './assets/images/avatars/16.jpg' : './assets/images/avatars/15.jpg';
+  });
+
+
   constructor() {
     super();
   }
