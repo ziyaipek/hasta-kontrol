@@ -1,1 +1,51 @@
-<p>my-patients works!</p>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Patient First Name</th>
+        <th scope="col">Patient Last Name</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Actions</th> <!-- Actions column -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Ali</td>
+        <td>Veli</td>
+        <td>055124562</td>
+        <td>
+          <button class="btn btn-primary" (click)="editPatient(1)">Edit</button>
+          &nbsp;
+          <button class="btn btn-danger" (click)="deletePatient(1)">Delete</button>
+        </td> <!-- Actions buttons are added here -->
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Ahmet</td>
+        <td>Mehmet</td>
+        <td>0512345786</td>
+        <td>
+          <button class="btn btn-primary" (click)="editPatient(2)">Edit</button>
+          &nbsp;
+          <button class="btn btn-danger" (click)="deletePatient(2)">Delete</button>
+        </td> <!-- Actions buttons are added here -->
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colSpan="2">Mustafa</td>
+        <td>0521354235</td>
+        <td>
+          <button class="btn btn-primary" (click)="editPatient(3)">Edit</button>
+          &nbsp;
+          <button class="btn btn-danger" (click)="deletePatient(3)">Delete</button>
+        </td> <!-- Actions buttons are added here -->
+      </tr>
+    </tbody>
+  </table>
+  
+  <!-- Adding "Add New Patient" button below the table -->
+  <div class="mt-3">
+    <button class="btn btn-success" (click)="addNewPatient()">Add New Patient</button>
+  </div>
+  

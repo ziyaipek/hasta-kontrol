@@ -8,5 +8,19 @@ import { Component } from '@angular/core';
   styleUrl: './my-patients.component.scss'
 })
 export class MyPatientsComponent {
+  editPatient(id: number) {
 
+    console.log('Doktor düzenleniyor: ', id);
+  }
+
+  deletePatient(id: number) {
+
+    console.log('Doktor siliniyor: ', id);
+
+  }
+
+  addNewPatient() {
+
+    console.log('Yeni doktor ekleniyor');
+  }
 }
