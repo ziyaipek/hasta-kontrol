@@ -96,5 +96,12 @@ export const routes: Routes = [
       title: 'Register Page'
     }
   },
+  {
+    path: 'qr-page',
+    loadComponent: () => import('./views/pages/qr-page/qr-page.component').then(m => m.QrPageComponent),
+    data: {
+      title: 'qr-page'
+    }
+  },
   { path: '**', redirectTo: '' }
 ];
