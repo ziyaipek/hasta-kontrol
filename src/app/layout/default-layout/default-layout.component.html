@@ -28,17 +28,13 @@
       compact
     ></c-sidebar-nav>
   </ng-scrollbar>
-
-  @if (!sidebar1.narrow) {
     <c-sidebar-footer
       cSidebarToggle="sidebar1"
       class="border-top d-none d-lg-flex"
-      toggle="unfoldable"
-      style="cursor: pointer;"
     >
-      <button cSidebarToggler aria-label="Toggle sidebar fold"></button>
+    <button cSidebarToggler aria-label="Toggle sidebar fold"></button>
     </c-sidebar-footer>
-  }
+
 </c-sidebar>
 
 <!--main-->

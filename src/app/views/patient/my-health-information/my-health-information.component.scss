@@ -1,35 +1,32 @@
+
+.custom-card-header {
+  background-color: var(--header-color, #5856d6);
+  color: var(--header-text-color, white);
+  border-bottom: none;
+}
+
 .container {
     max-width: 900px;
     margin: 0 auto;
-  }
-  .custom-card {
-    background-color: #FF6F61; /* Açık nar kırmızı arka plan rengi */
-    color: white; /* Yazı rengini beyaz yap */
-  }
-  
-  .custom-card-header {
-    background-color: #FF6F61; /* Başlık kısmı da aynı renk */
-    color: white; /* Başlık yazı rengi beyaz */
-    border-bottom: none; /* Başlık ile gövde arasında sınır kaldırma (isteğe bağlı) */
-  }
-  
-  h4 {
-    margin: 0; /* Başlıkta ek boşlukları kaldırmak için */
-  }
-  
-  h5 {
-    color: #333;
-  }
-  
-  p {
+}
+
+
+h4 {
+    margin: 0;
+}
+
+h5 {
+  color: var(--h5-color);
+}
+
+p {
     margin-bottom: 5px;
-  }
-  
-  ul {
+}
+
+ul {
     padding-left: 20px;
-  }
-  
-  hr {
+}
+
+hr {
     margin: 20px 0;
-  }
-  
+}
