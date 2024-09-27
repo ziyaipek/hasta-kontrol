@@ -90,13 +90,13 @@ export class ApiService {
 
   getAllPatients() {
     return this.http
-      .get<BaseDataResponse<Patient[]>>(environment.api_url + '/Patient/GetAll')
+      .get<BaseDataResponse<Patient[]>>(environment.api_url+'/Patient/GetAll')
       .pipe(share());
   }
 
   createPatient(entity: object) {
     return this.http
-      .request<BaseResponse>('post', environment.api_url + '/Patient/Create', {
+      .request<BaseResponse>('post', environment.api_url +'/Patient/Create', {
         body: entity,
       })
       .pipe(share());

@@ -11,13 +11,13 @@
   <tbody>
     <tr *ngFor="let doctor of doctors; let i = index">
       <th scope="row">{{ i + 1 }}</th>
-      <td>{{ doctor.FirstName }}</td>
-      <td>{{ doctor.LastName }}</td>
-      <td>{{ doctor.ContactInformation }}</td>
+      <td>{{ doctor.firstName }}</td>
+      <td>{{ doctor.lastName }}</td>
+      <td>{{ doctor.contactInformation }}</td>
       <td>
-        <button class="btn btn-primary" (click)="editDoctor(doctor.Id)">Edit</button>
+        <button class="btn btn-primary" (click)="editDoctor(doctor.id)">Edit</button>
         &nbsp;
-        <button class="btn btn-danger" (click)="deleteDoctor(doctor.Id)">Delete</button>
+        <button class="btn btn-danger" (click)="deleteDoctor(doctor.id)">Delete</button>
       </td>
     </tr>
   </tbody>

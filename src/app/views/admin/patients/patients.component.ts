@@ -15,7 +15,7 @@ export class PatientsComponent implements OnInit{
   patients : Patient[]=[];
 
 
-  constructor(private readonly apiService: ApiService){}
+  constructor(private apiService: ApiService){}
 
 ngOnInit(): void {
   this.apiService.getAllPatients().subscribe((result) => {
