@@ -10,17 +10,17 @@ import { CommonModule } from '@angular/common';
 })
 export class MedicinesComponent {
   medications = [
-    { id: 1, name: 'Parol', dose: '500mg' },
-    { id: 2, name: 'Aspirin', dose: '100mg' },
-    { id: 3, name: 'Augmentin', dose: '625mg' }
+    { Id: 1, MedicationName: 'Parol', UsageInstructions: '500mg' },
+    { Id: 2, MedicationName: 'Aspirin', UsageInstructions: '100mg' },
+    { Id: 3, MedicationName: 'Augmentin', UsageInstructions: '625mg' }
   ];
 
-  editMedication(id: number) {
-    console.log('İlaç düzenleniyor: ', id);
+  editMedication(Id: number) {
+    console.log('İlaç düzenleniyor: ', Id);
   }
 
-  deleteMedication(id: number) {
-    console.log('İlaç siliniyor: ', id);
+  deleteMedication(Id: number) {
+    console.log('İlaç siliniyor: ', Id);
   }
 
   addNewMedication() {

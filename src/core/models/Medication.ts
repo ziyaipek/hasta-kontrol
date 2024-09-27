@@ -1,7 +1,7 @@
 export class Medication {
-    id: number = 0;
-    name: string = ''; 
-    activeIngredient: string = ''; 
-    usageInstructions: string = ''; 
+    Id: number = 0;
+    MedicationName: string = ''; 
+    ActiveIngredient: string = ''; 
+    UsageInstructions: string = ''; 
   }
   

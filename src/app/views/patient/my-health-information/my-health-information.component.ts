@@ -10,16 +10,13 @@ import { CardModule, GridModule } from '@coreui/angular';
 })
 export class MyHealthInformationComponent {
   patient = {
-    firstName: 'John',
-    lastName: 'Doe',
-    phone: '0551234567',
-    emergencyContact: {
-      name: 'Jane Doe',
-      relationship: 'Spouse',
-      phone: '0557654321'
-    },
-    illnesses: ['Diabetes', 'Hypertension'],
-    medications: ['Metformin', 'Aspirin'],
-    doctorNote: 'The patient should maintain regular check-ups and monitor blood sugar levels closely.'
+    FirstName: 'John',
+    LastName: 'Doe',
+    ContactInformation: '555-123-4567',
+    EmergencyContactFirstName: 'Jane',
+    EmergencyContactLastName: 'Doe',
+    EmergencyContactPhone: '555-987-6543',
+    illnesses: ['Diabetes', 'Hypertension', 'Migraine'],
+    medications: ['Metformin', 'Lisinopril', 'Aspirin'],
   };
 }

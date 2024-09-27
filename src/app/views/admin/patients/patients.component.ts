@@ -1,27 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Patient } from 'src/core/models/Patient';
+import { HttpClientModule } from '@angular/common/http'
+import { ApiService } from 'src/core/services/api/api.service';
 @Component({
   selector: 'app-patients',
   standalone: true,
-  imports: [CommonModule],
+  providers: [ApiService],
+  imports: [CommonModule,HttpClientModule],
   templateUrl: './patients.component.html',
   styleUrl: './patients.component.scss'
 })
-export class PatientsComponent {
-  patients = [
-    { id: 1, firstName: 'Ayşe', lastName: 'Demir', phone: '055124562' },
-    { id: 2, firstName: 'Mehmet', lastName: 'Kaya', phone: '0512345786' },
-    { id: 3, firstName: 'Ali', lastName: 'Veli', phone: '0521354235' }
-  ];
+export class PatientsComponent implements OnInit{
+  patients : Patient[]=[];
 
-  editPatient(id: number) {
 
-    console.log('Hasta düzenleniyor: ', id);
+  constructor(private readonly apiService: ApiService){}
+
+ngOnInit(): void {
+  this.apiService.getAllPatients().subscribe((result) => {
+    this.patients = result.data;
+    console.log(this.patients);
+  });
+}
+
+
+ 
+  editPatient(Id: number) {
+
+    console.log('Hasta düzenleniyor: ', Id);
   }
 
-  deletePatient(id: number) {
+  deletePatient(Id: number) {
 
-    console.log('Hasta siliniyor: ', id);
+    console.log('Hasta siliniyor: ', Id);
 
   }
 

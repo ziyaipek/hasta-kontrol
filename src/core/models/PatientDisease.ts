@@ -2,9 +2,9 @@ import { Disease } from './Disease';
 import { Patient } from './Patient';
 
 export class PatientDisease {
-  id: number = 0;
-  patientId: number = 0; 
-  diseaseId: number = 0; 
-  patient: Patient = new Patient(); 
-  disease: Disease = new Disease(); 
+  Id: number = 0;
+  PatientID: number = 0; 
+  Patient: Patient = new Patient(); 
+  DiseaseID: number = 0; 
+  Disease: Disease = new Disease(); 
 }

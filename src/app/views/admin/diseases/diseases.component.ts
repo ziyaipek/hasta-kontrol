@@ -9,19 +9,19 @@ import { CommonModule } from '@angular/common';
 })
 export class DiseasesComponent {
   diseases = [
-    { id: 1, name: 'Grip', symptoms: 'Ateş, baş ağrısı, öksürük' },
-    { id: 2, name: 'COVID-19', symptoms: 'Yüksek ateş, kuru öksürük, nefes darlığı' },
-    { id: 3, name: 'Migren', symptoms: 'Şiddetli baş ağrısı, ışığa duyarlılık' }
+    { Id: 1, DiseaseName: 'Grip', Symptoms: 'Ateş, baş ağrısı, öksürük' },
+    { Id: 2, DiseaseName: 'COVID-19', Symptoms: 'Yüksek ateş, kuru öksürük, nefes darlığı' },
+    { Id: 3, DiseaseName: 'Migren', Symptoms: 'Şiddetli baş ağrısı, ışığa duyarlılık' }
   ];
 
-  editDisease(id: number) {
+  editDisease(Id: number) {
     
-    console.log('Hastalık düzenleniyor: ', id);
+    console.log('Hastalık düzenleniyor: ', Id);
   }
 
-  deleteDisease(id: number) {
-    console.log('Hastalık siliniyor: ', id);
-    this.diseases = this.diseases.filter(disease => disease.id !== id); // Hastalığı listeden kaldır
+  deleteDisease(Id: number) {
+    console.log('Hastalık siliniyor: ', Id);
+    this.diseases = this.diseases.filter(disease => disease.Id !== Id); // Hastalığı listeden kaldır
   }
 
   addNewDisease() {

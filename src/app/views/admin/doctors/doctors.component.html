@@ -9,42 +9,21 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Batuhan</td>
-      <td>Yavuz</td>
-      <td>055124562</td>
+    <tr *ngFor="let doctor of doctors; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ doctor.FirstName }}</td>
+      <td>{{ doctor.LastName }}</td>
+      <td>{{ doctor.ContactInformation }}</td>
       <td>
-        <button class="btn btn-primary" (click)="editDoctor(1)">Edit</button>
+        <button class="btn btn-primary" (click)="editDoctor(doctor.Id)">Edit</button>
         &nbsp;
-        <button class="btn btn-danger" (click)="deleteDoctor(1)">Delete</button>
-      </td> <!-- Actions buttons are added here -->
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Emre</td>
-      <td>Ozyoruk</td>
-      <td>0512345786</td>
-      <td>
-        <button class="btn btn-primary" (click)="editDoctor(2)">Edit</button>
-        &nbsp;
-        <button class="btn btn-danger" (click)="deleteDoctor(2)">Delete</button>
-      </td> <!-- Actions buttons are added here -->
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colSpan="2">Ziya</td>
-      <td>0521354235</td>
-      <td>
-        <button class="btn btn-primary" (click)="editDoctor(3)">Edit</button>
-        &nbsp;
-        <button class="btn btn-danger" (click)="deleteDoctor(3)">Delete</button>
-      </td> <!-- Actions buttons are added here -->
+        <button class="btn btn-danger" (click)="deleteDoctor(doctor.Id)">Delete</button>
+      </td>
     </tr>
   </tbody>
 </table>
 
 <!-- Adding "Add New Doctor" button below the table -->
 <div class="mt-3">
-<button class="btn btn-success" (click)="addNewDoctor()">Add New Doctor</button>
+  <button class="btn btn-success" (click)="addNewDoctor()">Add New Doctor</button>
 </div>

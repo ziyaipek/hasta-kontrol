@@ -1,7 +1,7 @@
 import { Injectable, Type } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, catchError, map, share, throwError } from 'rxjs';
-import { environment } from 'src/environments/Enivronment';
+import { environment } from 'src/environments/environment';
 import { BaseDataResponse } from 'src/core/models/response/base-data-response.model';
 import { TokenResponse } from 'src/core/models/response/token-response.model';
 import { BaseResponse } from 'src/core/models/response/base-response.model';
@@ -21,7 +21,7 @@ import { MedicationPatient } from 'src/core/models/MedicationPatient';
 export class ApiService {
   private endpoint = environment.api_url;
 
-  constructor(private readonly http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   getAllAdmins() {
     return this.http

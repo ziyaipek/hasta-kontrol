@@ -1,30 +1,46 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import axios from 'axios';
+import { ApiEndpoints } from 'src/core/services/api/ApiEndpoints';
+
+import { ApiService } from '../../../../core/services/api/api.service';
+import { HttpClientModule } from '@angular/common/http';
+import { Doctor } from 'src/core/models/Doctor';
 
 @Component({
   selector: 'app-doctors',
   standalone: true,
-  imports: [],
+  imports: [HttpClientModule],  // Angular common modülünü eklemelisiniz
   templateUrl: './doctors.component.html',
-  styleUrl: './doctors.component.scss'
+  styleUrls: ['./doctors.component.scss']  // "styleUrls" olması gerekiyor
 })
-export class DoctorsComponent {
+export class DoctorsComponent implements OnInit {
 
+  doctors: Doctor[] = [];
 
-  editDoctor(id: number) {
+  constructor(private readonly apiService: ApiService) { }
 
-    console.log('Doktor düzenleniyor: ', id);
+  ngOnInit(): void {
+    this.getAllDoctors();
   }
 
-  deleteDoctor(id: number) {
+  getAllDoctors() {
+    this.apiService.getAllDoctors().subscribe((result) => {
+      this.doctors = result.data;
+      console.log(this.doctors);
+    });
 
-    console.log('Doktor siliniyor: ', id);
+  }
+  
 
+  editDoctor(Id: number) {
+    console.log('Editing doctor with ID: ', Id);
+  }
+
+  deleteDoctor(Id: number) {
+    console.log('Deleting doctor with ID: ', Id);
   }
 
   addNewDoctor() {
-
-    console.log('Yeni doktor ekleniyor');
+    console.log('Adding new doctor');
   }
 }
-
-

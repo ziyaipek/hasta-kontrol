@@ -1,7 +1,7 @@
 export class Disease {
-    id: number = 0; 
-    name: string = ''; 
-    description: string = ''; 
-    symptoms: string = ''; 
+    Id: number = 0; 
+    DiseaseName: string = ''; 
+    Description: string = ''; 
+    Symptoms: string = ''; 
   }
   
