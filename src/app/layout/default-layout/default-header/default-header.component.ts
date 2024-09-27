@@ -52,7 +52,7 @@ export class DefaultHeaderComponent extends HeaderComponent {
 
   readonly avatarSrc = computed(() => {
     const currentMode = this.colorMode();
-    return currentMode === 'dark' ? './assets/images/avatars/16.jpg' : './assets/images/avatars/15.jpg';
+    return currentMode === 'dark' ? './assets/images/avatars/15.png' : './assets/images/avatars/16.png';
   });
 
 
