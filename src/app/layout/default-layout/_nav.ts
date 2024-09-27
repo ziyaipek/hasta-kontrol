@@ -35,12 +35,6 @@ export const navItems: INavData[] = [
     url: '/admin/diseases',
     iconComponent: { name: 'cil-healing' }
   },
-
-  {
-    name: 'Settings',
-    url: '/admin/settings',
-    iconComponent: { name: 'cil-settings' }
-  },
   {
     title: true,
     name: 'Doctor'
@@ -62,11 +56,6 @@ export const navItems: INavData[] = [
     iconComponent: { name: 'cil-healing' }
   },
   {
-    name: 'Settings',
-    url: '/doctor/settings',
-    iconComponent: { name: 'cil-settings' }
-  },
-  {
     title: true,
     name: 'Patient'
   },
@@ -80,10 +69,5 @@ export const navItems: INavData[] = [
     name: 'Generate QR Code',
     url: '/patient/generate-qr-code',
     iconComponent: { name: 'cil-qr-code' }
-  },
-  {
-    name: 'Settings',
-    url: '/patient/settings',
-    iconComponent: { name: 'cil-settings' }
   }
 ];
