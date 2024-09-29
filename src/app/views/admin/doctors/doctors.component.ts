@@ -13,7 +13,7 @@ import { Doctor } from 'src/core/models/Doctor';
   styleUrl: './doctors.component.scss'
 })
 export class DoctorsComponent implements OnInit {
-  doctors: any[] = []; // `any[]` yerine model tipi `Doctor[]` kullanılması daha iyi olur
+  doctors: any[] = [];
 
   constructor(private apiService: ApiService) {}
 
@@ -23,11 +23,6 @@ export class DoctorsComponent implements OnInit {
       this.doctors = result.data;
       console.log(this.doctors);
     });
-  }
-
-  editDoctor(id: number) {
-    console.log('Doktor düzenleniyor: ', id);
-    // Bu kısma editDoctor ile ilgili işlemler eklenebilir
   }
 
   deleteDoctor(id: number) {
@@ -43,6 +38,13 @@ export class DoctorsComponent implements OnInit {
       });
     }
   }
+
+  editDoctor(id: number) {
+    console.log('Doktor düzenleniyor: ', id);
+    // Bu kısma editDoctor ile ilgili işlemler eklenebilir
+  }
+
+  
 
   addNewDoctor() {
     console.log('Yeni doktor ekleniyor');

@@ -12,17 +12,30 @@ import { ApiService } from 'src/core/services/api/api.service';
   styleUrl: './patients.component.scss'
 })
 export class PatientsComponent implements OnInit{
-  patients : Patient[]=[];
+  patients : any[]=[];
+  
+  constructor(private apiService: ApiService) {}
 
+  ngOnInit(): void {
+    this.apiService.getAllPatients().subscribe((result) => {
+      this.patients = result.data;
+      console.log(this.patients);
+    });
+  }
 
-  constructor(private apiService: ApiService){}
-
-ngOnInit(): void {
-  this.apiService.getAllPatients().subscribe((result) => {
-    this.patients = result.data;
-    console.log(this.patients);
-  });
-}
+  deletePatient(id: number) {
+    // Kullanıcıdan silme işlemi için onay al
+    if (confirm('Bu patient silmek istediğinizden emin misiniz?')) {
+      this.apiService.deleteDoctor(id).then(() => {
+        // Silme işlemi başarılı olduğunda, doktoru listeden çıkar
+        this.patients = this.patients.filter(patient => patient.id !== id);
+        alert('patient başarıyla silindi');
+      }).catch(error => {
+        console.error('Silme işlemi başarısız: ', error);
+        alert('patient silinirken bir hata oluştu. Lütfen tekrar deneyin.');
+      });
+    }
+  }
 
 
  
@@ -31,11 +44,7 @@ ngOnInit(): void {
     console.log('Hasta düzenleniyor: ', Id);
   }
 
-  deletePatient(Id: number) {
-
-    console.log('Hasta siliniyor: ', Id);
-
-  }
+  
 
   addNewPatient() {
 

@@ -1,28 +1,47 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ApiService } from 'src/core/services/api/api.service';
+import { HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-diseases',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HttpClientModule],
   templateUrl: './diseases.component.html',
   styleUrl: './diseases.component.scss'
+  
 })
 export class DiseasesComponent {
-  diseases = [
-    { Id: 1, DiseaseName: 'Grip', Symptoms: 'Ateş, baş ağrısı, öksürük' },
-    { Id: 2, DiseaseName: 'COVId-19', Symptoms: 'Yüksek ateş, kuru öksürük, nefes darlığı' },
-    { Id: 3, DiseaseName: 'Migren', Symptoms: 'ŞIddetli baş ağrısı, ışığa duyarlılık' }
-  ];
+  diseases: any[] = []; 
+
+  constructor(private apiService: ApiService) {}
+
+  ngOnInit(): void {
+    this.apiService.getAllDiseases().subscribe((result) => {
+      this.diseases = result.data;
+      console.log(this.diseases);
+    });
+  }
+
+  deleteDisease(id: number) {
+    // Kullanıcıdan silme işlemi için onay al
+    if (confirm('Bu Disease silmek istediğinizden emin misiniz?')) {
+      this.apiService.deleteDoctor(id).then(() => {
+        // Silme işlemi başarılı olduğunda, doktoru listeden çıkar
+        this.diseases = this.diseases.filter(disease => disease.id !== id);
+        alert('Disease başarıyla silindi');
+      }).catch(error => {
+        console.error('Silme işlemi başarısız: ', error);
+        alert('Disease silinirken bir hata oluştu. Lütfen tekrar deneyin.');
+      });
+    }
+  }
 
   editDisease(Id: number) {
     
     console.log('Hastalık düzenleniyor: ', Id);
   }
 
-  deleteDisease(Id: number) {
-    console.log('Hastalık siliniyor: ', Id);
-    this.diseases = this.diseases.filter(disease => disease.Id !== Id); // Hastalığı listeden kaldır
-  }
+  
 
   addNewDisease() {
     console.log('Yeni hastalık ekleniyor');
