@@ -70,6 +70,7 @@ export class ApiService {
       .pipe(share());
   }
 
+ 
   updateDoctor(id: number, newEntity: object) {
     return this.http
       .request<BaseResponse>(
@@ -79,6 +80,8 @@ export class ApiService {
       )
       .pipe(share());
   }
+  
+  
 
   deleteDoctor(id: number) {
     return this.http

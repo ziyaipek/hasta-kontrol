@@ -1,0 +1,22 @@
+::ng-deep .mat-dialog-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; // Yükseklik için
+  }
+  
+  ::ng-deep .mat-dialog-content {
+    margin: 0; // Varsayılan margin'i kaldırın
+  }
+  .custom-dialog-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; // Yükseklik için
+    margin: 0; // Varsayılan margin'i kaldırın
+  }
+  
+  .custom-dialog-container .mat-dialog-content {
+    margin: 0; // Varsayılan margin'i kaldırın
+  }
+    

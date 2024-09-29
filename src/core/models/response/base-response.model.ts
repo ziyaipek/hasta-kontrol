@@ -1,4 +1,5 @@
-export interface BaseResponse {
+export interface BaseResponse<T = any> { // T tipi ile generic yapabiliriz
+  data: T; // data bir alan olarak tanımlanır
   message: string | null;
   status: ResponseStatus;
 }

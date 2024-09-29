@@ -1,35 +1,65 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
 import { ApiService } from 'src/core/services/api/api.service';
-import { Doctor } from 'src/core/models/Doctor';
+import { MatDialog } from '@angular/material/dialog';
+import { DoctorModalComponent } from 'src/app/views/admin/doctor-modal/doctor-modal.component';
+import { EditDoctorModalComponent } from 'src/app/views/admin/edit-doctor-modal/edit-doctor-modal.component';
 
 @Component({
   selector: 'app-doctors',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule], // HttpClientModule'i buraya ekle
   providers: [ApiService],
   templateUrl: './doctors.component.html',
-  styleUrl: './doctors.component.scss'
+  styleUrls: ['./doctors.component.scss']
 })
 export class DoctorsComponent implements OnInit {
   doctors: any[] = [];
+  
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
-    // Doktorları al ve component'teki `doctors` array'ine at
     this.apiService.getAllDoctors().subscribe((result) => {
       this.doctors = result.data;
       console.log(this.doctors);
     });
   }
 
+  updateDoctor(id: number): void {
+    const doctorToEdit = this.doctors.find(d => d.id === id);
+
+    if (doctorToEdit) {
+      const dialogRef = this.dialog.open(EditDoctorModalComponent, {
+        width: '400px',
+        data: doctorToEdit
+      });
+
+      dialogRef.afterClosed().subscribe((result) => {
+        if (result) {
+          this.apiService.updateDoctor(id, result).subscribe(
+            (response) => {
+              console.log('Doktor başarıyla güncellendi:', response);
+              const index = this.doctors.findIndex(d => d.id === id);
+              if (index !== -1) {
+                this.doctors[index] = response.data; 
+              }
+              alert('Doktor başarıyla güncellendi!');
+            },
+            (error) => {
+              console.error('Doktor güncellenirken hata oluştu:', error);
+              alert('Doktor güncellenirken bir hata oluştu. Lütfen tekrar deneyin.');
+            }
+          );
+        }
+      });
+    }
+  }
+
   deleteDoctor(id: number) {
-    // Kullanıcıdan silme işlemi için onay al
     if (confirm('Bu doktoru silmek istediğinizden emin misiniz?')) {
       this.apiService.deleteDoctor(id).then(() => {
-        // Silme işlemi başarılı olduğunda, doktoru listeden çıkar
         this.doctors = this.doctors.filter(doctor => doctor.id !== id);
         alert('Doktor başarıyla silindi');
       }).catch(error => {
@@ -39,15 +69,25 @@ export class DoctorsComponent implements OnInit {
     }
   }
 
-  editDoctor(id: number) {
-    console.log('Doktor düzenleniyor: ', id);
-    // Bu kısma editDoctor ile ilgili işlemler eklenebilir
-  }
+  createDoctor(): void {
+    const dialogRef = this.dialog.open(DoctorModalComponent, {
+      width: '400px',
+    });
 
-  
-
-  addNewDoctor() {
-    console.log('Yeni doktor ekleniyor');
-    // Yeni doktor ekleme işlemi burada yapılabilir
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.apiService.createDoctor(result).subscribe(
+          (response) => {
+            console.log('Doktor başarıyla eklendi:', response);
+            this.doctors.push(response.data);
+            alert('Doktor başarıyla eklendi!');
+          },
+          (error) => {
+            console.error('Doktor eklenirken hata oluştu:', error);
+            alert('Doktor eklenirken bir hata oluştu. Lütfen tekrar deneyin.');
+          }
+        );
+      }
+    });
   }
 }
