@@ -1,0 +1,79 @@
+<h2 mat-dialog-title>Hasta Ekle</h2>
+<mat-dialog-content>
+  <form [formGroup]="patientForm">
+    <!-- Hasta İsim -->
+    <mat-form-field appearance="fill">
+      <mat-label>İsim</mat-label>
+      <input matInput formControlName="firstName" />
+    </mat-form-field>
+
+    <!-- Hasta Soyisim -->
+    <mat-form-field appearance="fill">
+      <mat-label>Soyisim</mat-label>
+      <input matInput formControlName="lastName" />
+    </mat-form-field>
+
+    <!-- Hasta Doğum Tarihi -->
+    <mat-form-field appearance="fill">
+      <mat-label>Doğum Tarihi</mat-label>
+      <input matInput formControlName="dateOfBirth" type="date" />
+    </mat-form-field>
+
+    <!-- Cinsiyet -->
+    <mat-form-field appearance="fill">
+      <mat-label>Cinsiyet</mat-label>
+      <mat-select formControlName="gender">
+        <mat-option value="male">Erkek</mat-option>
+        <mat-option value="female">Kadın</mat-option>
+        <mat-option value="other">Diğer</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- İletişim Bilgisi -->
+    <mat-form-field appearance="fill">
+      <mat-label>İletişim Bilgisi</mat-label>
+      <input matInput formControlName="contactInformation" />
+    </mat-form-field>
+
+    <!-- Kullanıcı Adı -->
+    <mat-form-field appearance="fill">
+      <mat-label>Kullanıcı Adı</mat-label>
+      <input matInput formControlName="username" />
+    </mat-form-field>
+
+    <!-- Şifre -->
+    <mat-form-field appearance="fill">
+      <mat-label>Şifre</mat-label>
+      <input matInput formControlName="password" type="password" />
+    </mat-form-field>
+
+    <!-- Acil Durum Kişisi İsim -->
+    <mat-form-field appearance="fill">
+      <mat-label>Acil Durum Kişisi İsim</mat-label>
+      <input matInput formControlName="emergencyContactFirstName" />
+    </mat-form-field>
+
+    <!-- Acil Durum Kişisi Soyisim -->
+    <mat-form-field appearance="fill">
+      <mat-label>Acil Durum Kişisi Soyisim</mat-label>
+      <input matInput formControlName="emergencyContactLastName" />
+    </mat-form-field>
+
+    <!-- Acil Durum Kişisi Telefon -->
+    <mat-form-field appearance="fill">
+      <mat-label>Acil Durum Kişisi Telefon</mat-label>
+      <input matInput formControlName="emergencyContactPhone" />
+    </mat-form-field>
+
+    <!-- Silindi mi? -->
+    <mat-checkbox formControlName="isDeleted">Silindi mi?</mat-checkbox>
+
+    <!-- İlk Giriş mi? -->
+    <mat-checkbox formControlName="isFirstLogin">İlk Giriş mi?</mat-checkbox>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onNoClick()">İptal</button>
+  <button mat-button (click)="onSubmit()">Kaydet</button>
+</mat-dialog-actions>
