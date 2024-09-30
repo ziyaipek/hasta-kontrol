@@ -6,7 +6,7 @@ import { ApiService } from 'src/core/services/api/api.service';
   selector: 'app-medicines',
   standalone: true,
   imports: [CommonModule, HttpClientModule],
-  templateUrl: './medicines.component.html',
+  templateUrl:'./medicines.component.html',
   styleUrl: './medicines.component.scss'
 })
 export class MedicinesComponent {
