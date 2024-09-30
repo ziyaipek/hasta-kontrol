@@ -13,7 +13,7 @@
       <td>{{ disease.DiseaseName }}</td>
       <td>{{ disease.Symptoms }}</td>
       <td>
-        <button class="btn btn-primary" (click)="editDisease(disease.Id)">Edit</button>
+        <button class="btn btn-primary" (click)="updateDisease(disease.Id)">Edit</button>
         &nbsp;
         <button class="btn btn-danger" (click)="deleteDisease(disease.Id)">Delete</button>
       </td>
@@ -23,5 +23,5 @@
 
 <!-- Add New Disease button below the table -->
 <div class="mt-3">
-<button class="btn btn-success" (click)="addNewDisease()">Add New Disease</button>
+<button class="btn btn-success" (click)="createDisease()">Add New Disease</button>
 </div>

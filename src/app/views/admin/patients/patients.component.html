@@ -15,7 +15,7 @@
       <td>{{ patient.LastName }}</td>
       <td>{{ patient.ContactInformation }}</td>
       <td>
-        <button class="btn btn-primary" (click)="editPatient(patient.Id)">Edit</button>
+        <button class="btn btn-primary" (click)="updatePatient(patient.Id)">Edit</button>
         &nbsp;
         <button class="btn btn-danger" (click)="deletePatient(patient.Id)">Delete</button>
       </td>
@@ -25,5 +25,5 @@
 
 <!-- Add New Patient button below the table -->
 <div class="mt-3">
-<button class="btn btn-success" (click)="addNewPatient()">Add New Patient</button>
+<button class="btn btn-success" (click)="createPatient()">Add New Patient</button>
 </div>
