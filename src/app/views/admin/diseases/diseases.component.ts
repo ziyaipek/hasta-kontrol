@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiService } from 'src/core/services/api/api.service';
+import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
+
 @Component({
   selector: 'app-diseases',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,HttpClientModule],
   templateUrl: './diseases.component.html',
   styleUrl: './diseases.component.scss'
 })
