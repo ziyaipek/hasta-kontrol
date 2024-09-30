@@ -1,1 +1,24 @@
-<p>disease-modal works!</p>
+<h2 mat-dialog-title>Hastalık Ekle</h2>
+<mat-dialog-content>
+  <form [formGroup]="diseaseForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Hastalık Adı</mat-label>
+      <input matInput formControlName="diseaseName" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Açıklama</mat-label>
+      <input matInput formControlName="description" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Belirtiler</mat-label>
+      <input matInput formControlName="symptoms" />
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onNoClick()">İptal</button>
+  <button mat-button (click)="onSubmit()">Kaydet</button>
+</mat-dialog-actions>

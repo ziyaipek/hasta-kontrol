@@ -1,1 +1,24 @@
-<p>medicine-modal works!</p>
+<h2 mat-dialog-title>İlaç Ekle</h2>
+<mat-dialog-content>
+  <form [formGroup]="medicineForm">
+    <mat-form-field appearance="fill">
+      <mat-label>İlaç Adı</mat-label>
+      <input matInput formControlName="medicationName" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Etkin Madde</mat-label>
+      <input matInput formControlName="activeIngredient" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Kullanım Talimatları</mat-label>
+      <input matInput formControlName="usageInstructions" />
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onNoClick()">İptal</button>
+  <button mat-button (click)="onSubmit()">Kaydet</button>
+</mat-dialog-actions>
