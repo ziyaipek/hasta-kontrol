@@ -10,10 +10,10 @@
   <tbody>
     <tr *ngFor="let medication of medicines; let i = index">
       <th scope="row">{{ i + 1 }}</th>
-      <td>{{ medication.MedicationName }}</td>
-      <td>{{ medication.UsageInstructions }}</td>
+      <td>{{ medication.medicationName }}</td>
+      <td>{{ medication.usageInstructions }}</td>
       <td>
-        <button class="btn btn-primary" (click)="editMedication(medication.Id)">Edit</button>
+        <button class="btn btn-primary" (click)="updateMedication(medication.Id)">Edit</button>
         &nbsp;
         <button class="btn btn-danger" (click)="deleteMedication(medication.Id)">Delete</button>
       </td>
@@ -21,7 +21,8 @@
   </tbody>
 </table>
 
+
 <!-- Add New Medication button below the table -->
 <div class="mt-3">
-<button class="btn btn-success" (click)="addNewMedication()">Add New Medication</button>
+<button class="btn btn-success" (click)="createMedication()">Add New Medication</button>
 </div>
