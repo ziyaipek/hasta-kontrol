@@ -1,6 +1,7 @@
 <h2 mat-dialog-title>İlaç Düzenle</h2>
 <mat-dialog-content>
   <form [formGroup]="medicineForm">
+<<<<<<< HEAD
     <mat-form-field appearance="fill">
       <mat-label>İlaç Adı</mat-label>
       <input matInput formControlName="medicationName" />
@@ -14,6 +15,24 @@
     <mat-form-field appearance="fill">
       <mat-label>Kullanım Talimatları</mat-label>
       <input matInput formControlName="usageInstructions" />
+=======
+    <!-- İlaç Adı -->
+    <mat-form-field appearance="fill">
+      <mat-label>İlaç Adı</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+
+    <!-- Kullanım Talimatları -->
+    <mat-form-field appearance="fill">
+      <mat-label>Kullanım Talimatları</mat-label>
+      <textarea matInput formControlName="usageInstructions"></textarea>
+    </mat-form-field>
+
+    <!-- Etken Madde -->
+    <mat-form-field appearance="fill">
+      <mat-label>Etken Madde</mat-label>
+      <input matInput formControlName="activeIngredient" />
+>>>>>>> 2bd0457 (fixed all bugs about MODAL)
     </mat-form-field>
   </form>
 </mat-dialog-content>
