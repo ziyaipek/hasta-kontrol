@@ -2,19 +2,11 @@ import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
-<<<<<<< HEAD
 import { MatButtonModule } from '@angular/material/button'; // Mat-dialog butonları için gerekli
 import { CommonModule } from '@angular/common';
 import { MatCheckboxModule } from '@angular/material/checkbox'; // Checkbox modülünü ekleyin
 import { ReactiveFormsModule } from '@angular/forms';  // Form kontrolü için gerekli
 import { MatInputModule } from '@angular/material/input'; // Input alanları için
-=======
-import { MatButtonModule } from '@angular/material/button';
-import { CommonModule } from '@angular/common';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
->>>>>>> 2bd0457 (fixed all bugs about MODAL)
 
 @Component({
   selector: 'app-edit-patient-modal',
@@ -41,13 +33,8 @@ export class EditPatientModalComponent {
       emergencyContactFirstName: [data.emergencyContactFirstName],
       emergencyContactLastName: [data.emergencyContactLastName],
       emergencyContactPhone: [data.emergencyContactPhone],
-<<<<<<< HEAD
       isDeleted: [false],
       isFirstLogin: [true],
-=======
-      isDeleted: [data.isDeleted],
-      isFirstLogin: [data.isFirstLogin],
->>>>>>> 2bd0457 (fixed all bugs about MODAL)
     });
   }
 
