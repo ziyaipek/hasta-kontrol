@@ -26,6 +26,7 @@ import { provideMomentDateAdapter } from '@angular/material-moment-adapter'; // 
   selector: 'app-patient-modal',
   standalone: true,
 <<<<<<< HEAD
+<<<<<<< HEAD
   imports: [
     MatDialogModule,
     MatButtonModule,
@@ -38,6 +39,22 @@ import { provideMomentDateAdapter } from '@angular/material-moment-adapter'; // 
 =======
   imports: [MatNativeDateModule,MatSelectModule,MatDatepickerModule,MatCheckboxModule,MatDialogModule, MatButtonModule, CommonModule, ReactiveFormsModule, MatInputModule],
 >>>>>>> 2bd0457 (fixed all bugs about MODAL)
+=======
+  imports: [
+    MatNativeDateModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatCheckboxModule,
+    MatDialogModule,
+    MatButtonModule,
+    CommonModule,
+    ReactiveFormsModule,
+    MatInputModule
+  ],
+  providers: [
+    provideMomentDateAdapter() // Bu satırı ekleyin, eğer Moment.js kullanıyorsanız
+  ],
+>>>>>>> f7338b1 (patient-model-comp)
   templateUrl: './patient-modal.component.html',
 })
 export class PatientModalComponent {
