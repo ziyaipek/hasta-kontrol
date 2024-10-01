@@ -3,6 +3,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { NgScrollbar } from 'ngx-scrollbar';
 import { cilHospital } from '@coreui/icons';
 import { IconDirective, IconComponent } from '@coreui/icons-angular';
+import { SidebarNavHelper } from '@coreui/angular';
 import {
   ContainerComponent,
   ShadowOnScrollDirective,
@@ -30,6 +31,7 @@ function isOverflown(element: HTMLElement) {
   templateUrl: './default-layout.component.html',
   styleUrls: ['./default-layout.component.scss'],
   standalone: true,
+  providers: [SidebarNavHelper],
   imports: [
     SidebarComponent,
     SidebarHeaderComponent,

@@ -282,6 +282,21 @@ export class ApiService {
       .pipe(share())
       .toPromise();
   }
+
+
+  login(username: string, password: string): Observable<any> {
+    const payload = {
+      username,
+      password,
+    };
+    return this.http.post<any>(`${this.endpoint}/Login/login`, payload).pipe(
+      map((response) => {
+        // Token'ı localStorage'a kaydedin
+        localStorage.setItem('token', response.token);
+        return response;
+      })
+    );
+  }
 }
 
 

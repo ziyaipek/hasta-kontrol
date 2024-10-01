@@ -20,11 +20,17 @@ export class MedicinesComponent implements OnInit {
   constructor(private apiService: ApiService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
+    this.refresh();
+  }
+
+
+  refresh() {
     this.apiService.getAllMedications().subscribe((result) => {
       this.medicines = result.data;
       console.log(this.medicines);
     });
   }
+
 
   updateMedication(id: number): void {
     const medicineToEdit = this.medicines.find(m => m.id === id);
@@ -45,6 +51,7 @@ export class MedicinesComponent implements OnInit {
                 this.medicines[index] = response.data; 
               }
               alert('İlaç başarıyla güncellendi!');
+              this.refresh();
             },
             (error) => {
               console.error('İlaç güncellenirken hata oluştu:', error);
@@ -61,6 +68,7 @@ export class MedicinesComponent implements OnInit {
       this.apiService.deleteMedication(id).then(() => {
         this.medicines = this.medicines.filter(medicine => medicine.id !== id);
         alert('İlaç başarıyla silindi');
+        this.refresh();
       }).catch(error => {
         console.error('Silme işlemi başarısız: ', error);
         alert('İlaç silinirken bir hata oluştu. Lütfen tekrar deneyin.');
@@ -80,6 +88,7 @@ export class MedicinesComponent implements OnInit {
             console.log('İlaç başarıyla eklendi:', response);
             this.medicines.push(response.data);
             alert('İlaç başarıyla eklendi!');
+            this.refresh();
           },
           (error) => {
             console.error('İlaç eklenirken hata oluştu:', error);

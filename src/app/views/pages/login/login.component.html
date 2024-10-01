@@ -5,15 +5,25 @@
         <c-card-group>
           <c-card class="p-4">
             <c-card-body>
-              <form cForm>
+              <!-- Formun formGroup ve ngSubmit ile düzgün bir şekilde bağlandığından emin olun -->
+              <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                 <h1>Login</h1>
                 <p class="text-body-secondary">Sign In to your account</p>
+                
+                <!-- Username Input -->
                 <c-input-group class="mb-3">
                   <span cInputGroupText>
                     <svg cIcon name="cilUser"></svg>
                   </span>
-                  <input autoComplete="username" cFormControl placeholder="Username" />
+                  <input 
+                    autoComplete="username" 
+                    cFormControl 
+                    formControlName="username"
+                    placeholder="Username"
+                  />
                 </c-input-group>
+                
+                <!-- Password Input -->
                 <c-input-group class="mb-4">
                   <span cInputGroupText>
                     <svg cIcon name="cilLockLocked"></svg>
@@ -21,13 +31,16 @@
                   <input
                     autoComplete="current-password"
                     cFormControl
+                    formControlName="password"
                     placeholder="Password"
                     type="password"
                   />
                 </c-input-group>
+
+                <!-- Login Button -->
                 <c-row>
                   <c-col xs="6">
-                    <button cButton class="px-4" color="primary">
+                    <button type="submit" cButton class="px-4" color="primary">
                       Login
                     </button>
                   </c-col>

@@ -48,5 +48,7 @@ export const ApiEndpoints : {[key: string] : string} = {
     "PatientDiseaseCreate": environment.api_url + "/PatientDisease/Create",
     "PatientDiseaseUpdate": environment.api_url + "/PatientDisease/Update",
     "PatientDiseaseDelete": environment.api_url + "/PatientDisease/Delete",
+
+    "Login": environment.api_url + "/Login/login",
   };
   

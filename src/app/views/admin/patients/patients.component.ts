@@ -20,6 +20,11 @@ export class PatientsComponent implements OnInit {
   constructor(private apiService: ApiService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
+    this.refresh();
+  }
+
+
+  refresh() {
     this.apiService.getAllPatients().subscribe((result) => {
       this.patients = result.data;
       console.log(this.patients);
@@ -45,6 +50,7 @@ export class PatientsComponent implements OnInit {
                 this.patients[index] = response.data; 
               }
               alert('Hasta başarıyla güncellendi!');
+              this.refresh();
             },
             (error) => {
               console.error('Hasta güncellenirken hata oluştu:', error);
@@ -61,6 +67,7 @@ export class PatientsComponent implements OnInit {
       this.apiService.deletePatient(id).then(() => {
         this.patients = this.patients.filter(patient => patient.id !== id);
         alert('Hasta başarıyla silindi');
+        this.refresh();
       }).catch(error => {
         console.error('Silme işlemi başarısız: ', error);
         alert('Hasta silinirken bir hata oluştu. Lütfen tekrar deneyin.');
@@ -80,6 +87,7 @@ export class PatientsComponent implements OnInit {
             console.log('Hasta başarıyla eklendi:', response);
             this.patients.push(response.data);
             alert('Hasta başarıyla eklendi!');
+            this.refresh();
           },
           (error) => {
             console.error('Hasta eklenirken hata oluştu:', error);
