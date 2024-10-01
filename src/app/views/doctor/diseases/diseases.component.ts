@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
   selector: 'app-diseases',
   standalone: true,
   imports: [CommonModule, HttpClientModule],
+  providers: [ApiService],
   templateUrl: './diseases.component.html',
   styleUrl: './diseases.component.scss'
   

@@ -10,8 +10,8 @@
     <tbody>
       <tr *ngFor="let disease of diseases; let i = index">
         <th scope="row">{{ i + 1 }}</th>
-        <td>{{ disease.DiseaseName }}</td>
-        <td>{{ disease.Symptoms }}</td>
+        <td>{{ disease.diseaseName }}</td>
+        <td>{{ disease.symptoms }}</td>
         <td>
           <button class="btn btn-primary" (click)="editDisease(disease.Id)">Edit</button>
           &nbsp;
