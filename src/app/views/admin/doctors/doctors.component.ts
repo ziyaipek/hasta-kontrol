@@ -17,7 +17,6 @@ import { EditDoctorModalComponent } from 'src/app/views/admin/edit-doctor-modal/
 export class DoctorsComponent implements OnInit {
   doctors: any[] = [];
   
-
   constructor(private apiService: ApiService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
@@ -51,7 +50,7 @@ export class DoctorsComponent implements OnInit {
                 this.doctors[index] = response.data; 
               }
               alert('Doktor başarıyla güncellendi!');
-              this.refresh();
+              this.refresh(); 
             },
             (error) => {
               console.error('Doktor güncellenirken hata oluştu:', error);
@@ -88,7 +87,7 @@ export class DoctorsComponent implements OnInit {
             console.log('Doktor başarıyla eklendi:', response);
             this.doctors.push(response.data);
             alert('Doktor başarıyla eklendi!');
-            this.refresh();
+            this.refresh(); // Refresh burada yapılmalı
           },
           (error) => {
             console.error('Doktor eklenirken hata oluştu:', error);
