@@ -10,9 +10,6 @@ import { MatInputModule } from '@angular/material/input'; // Input alanları iç
 
 
 
-
-
-
 @Component({
   selector: 'app-doctor-modal',
   standalone : true,

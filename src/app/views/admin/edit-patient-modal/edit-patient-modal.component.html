@@ -1,1 +1,62 @@
-<p>edit-patient-modal works!</p>
+<h2 mat-dialog-title>Hasta Düzenle</h2>
+<mat-dialog-content>
+  <form [formGroup]="patientForm">
+    <mat-form-field appearance="fill">
+      <mat-label>İsim</mat-label>
+      <input matInput formControlName="firstName" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Soyisim</mat-label>
+      <input matInput formControlName="lastName" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Doğum Tarihi</mat-label>
+      <input matInput formControlName="dateOfBirth" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Cinsiyet</mat-label>
+      <input matInput formControlName="gender" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>İletişim Bilgisi</mat-label>
+      <input matInput formControlName="contactInformation" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Kullanıcı Adı</mat-label>
+      <input matInput formControlName="username" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Şifre</mat-label>
+      <input matInput formControlName="password" type="password" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Acil Durum Kişisi İsim</mat-label>
+      <input matInput formControlName="emergencyContactFirstName" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Acil Durum Kişisi Soyisim</mat-label>
+      <input matInput formControlName="emergencyContactLastName" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Acil Durum Kişisi Telefon</mat-label>
+      <input matInput formControlName="emergencyContactPhone" />
+    </mat-form-field>
+
+    <mat-checkbox formControlName="isDeleted">Aktif ?</mat-checkbox>
+    <mat-checkbox formControlName="isFirstLogin">İlk Giriş mi?</mat-checkbox>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onNoClick()">İptal</button>
+  <button mat-button (click)="onSubmit()">Kaydet</button>
+</mat-dialog-actions>
